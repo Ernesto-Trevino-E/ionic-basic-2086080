@@ -41,6 +41,11 @@ const routes: Routes = [
     canActivate: [AutGuardGuard]
   },
   {
+    path: 'destinos',
+    loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule),
+    canActivate: [AutGuardGuard]
+  },
+  {
     path: 'receptor',
     loadChildren: () => import('./receptor/receptor.module').then( m => m.ReceptorPageModule)
   },

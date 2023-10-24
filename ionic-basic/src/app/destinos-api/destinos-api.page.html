@@ -2,9 +2,9 @@
     <ion-toolbar color="primary">
         <ion-title>Destinos</ion-title>
     </ion-toolbar>
-  </ion-header>
-  
-  <ion-content padding>
+</ion-header>
+
+<ion-content padding>
     <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
         <ion-item>
             <ion-label>
@@ -22,9 +22,7 @@
                 (click)="cancelarEdicion()">Cancelar</ion-button>
         </ion-item-divider>
     </form>
-        </ion-item-divider>
-    </form>
-  
+
     <ion-item-divider></ion-item-divider>
     <ion-grid>
         <ion-row>
@@ -39,10 +37,10 @@
                 </ion-text>
             </ion-col>
             <ion-col>
-            
+
             </ion-col>
             <ion-col>
-            
+
             </ion-col>
         </ion-row>
         <ion-row *ngFor="let lugar of destinos">
@@ -52,9 +50,10 @@
                 </ion-text>
             </ion-col>
             <ion-col>
-                <ion-text>
-                    En construccion
-                    <!--{{lugar.ubicacion}}-->
+                <ion-text *ngIf="lugar.latitud">
+                    latitud: {{lugar.latitud}} ,longitud{{lugar.longitud}}
+                </ion-text>
+                <ion-text *ngIf="!lugar.latitud">
                 </ion-text>
             </ion-col>
             <ion-col>
@@ -65,4 +64,4 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-  </ion-content>
+</ion-content>
